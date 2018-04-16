@@ -1,5 +1,6 @@
 package solid.example;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,11 +15,12 @@ public class Main {
         orders.add(new Customer("Richard Ricardo", 171.42, new DiscountSubStrategy()));
 
         double total=0;
+        DecimalFormat df = new DecimalFormat("###.##");
         for(Customer o: orders) {
-            System.out.println(o.getCustomerName() + " " + o.getDiscountType().giveDiscount(o.getBillAmount()));
+            System.out.println(o.getCustomerName() + " " + df.format(o.getDiscountType().giveDiscount(o.getBillAmount())));
             total+= o.getDiscountType().giveDiscount(o.getBillAmount());
         }
-        System.out.println("Total:    " + total);
+        System.out.println("Total:    " + df.format(total));
 
     }
 }

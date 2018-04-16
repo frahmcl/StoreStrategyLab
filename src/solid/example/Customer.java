@@ -23,7 +23,7 @@ public class Customer {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
-    }   //Discount types S for Sale, D for Discount, L for Liquidation
+    }
 
 
     public void setBillAmount(double billAmount) {
